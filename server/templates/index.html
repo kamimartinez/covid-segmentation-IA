@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>COVID Lung Segmentation</title>
+
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Segmenación de Imágenes COVID</h1>
+
+      <p class="subtitle">Sube una imagen del pulmon</p>
+
+      <div class="card">
+        <form
+          hx-post="/predict"
+          hx-target="#results"
+          hx-swap="innerHTML"
+          hx-indicator="#loading"
+          enctype="multipart/form-data"
+        >
+          <label class="upload">
+            <strong>Subir imágen</strong>
+            <p>PNG, JPG or JPEG</p>
+
+            <input
+              type="file"
+              name="image"
+              accept="image/png,image/jpeg"
+              required
+            />
+          </label>
+
+          <button type="submit">Imagen Segmentada</button>
+
+          <p id="loading" class="htmx-indicator">Corriendo modelo, espere...</p>
+        </form>
+      </div>
+
+      <div id="results"></div>
+    </main>
+  </body>
+</html>
