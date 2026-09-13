@@ -1,21 +1,40 @@
-# covid-segmentation-IA
+# COVID Segmentation
 
-Proyecto de segmentación semántica de tomografías (CT) de tórax en pacientes con COVID-19, usando el dataset de la competencia [COVID-19 CT Images Segmentation](https://www.kaggle.com/competitions/covid-segmentation) de Kaggle.
+Proyecto de segmentación semántica de tomografías de tórax para pacientes con COVID-19. El repositorio se centra en un único notebook de investigación y entrenamiento para detectar regiones pulmonares afectadas por vidrio esmerilado y consolidación.
 
-El objetivo es segmentar, pixel por pixel, las zonas del pulmón afectadas por ground-glass opacity y consolidación.
+## Estructura del repositorio
 
+- `covid-segmentation.ipynb`: notebook principal con carga de datos, exploración, preprocessamiento, entrenamiento y evaluación.
+- `data/`: archivos `.npy` del dataset.
+- `README.md`: documentación del proyecto.
+- `requirements.txt`: dependencias necesarias para ejecutar el notebook.
 
-## Cómo correrlo
+## Requisitos
 
-Solo se necesita correr `main.ipynb` de inicio a fin (Kernel → Restart & Run All). Este notebook llama internamente a `etl.ipynb`, `eda.ipynb` y `dataset.ipynb` con `%run`, así que no hace falta correrlos por separado.
+- Python 3.10+
+- Jupyter / VS Code con soporte para notebooks
 
-1. Coloca los archivos `.npy` del dataset dentro de `data/`.
-1. Abre `main.ipynb`.
-1. Corre todas las celdas de arriba a abajo.
+## Instalación
 
-## Librerías necesarias
-- `numpy` 
-- `matplotlib` 
-- `torch` / `torchvision` 
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Cómo ejecutar
+
+1. Asegúrate de tener los archivos del dataset dentro de `data/`.
+2. Abre `covid-segmentation.ipynb` en Jupyter o VS Code.
+3. Ejecuta todas las celdas de arriba a abajo.
+
+## Dependencias principales
+
+- `numpy`
+- `pandas`
+- `matplotlib`
 - `scipy`
-- `albumentations` 
+- `torch`
+- `albumentations`
+- `segmentation-models-pytorch`
+- `tqdm`
