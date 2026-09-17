@@ -56,3 +56,7 @@ pip install -r requirements.txt
 - `albumentations`
 - `segmentation-models-pytorch`
 - `tqdm`
+
+### Correciones
+
+En este caso, la retroalimentación que nos dieron los profesores no nos llevó a hacer ninguna corrección.
