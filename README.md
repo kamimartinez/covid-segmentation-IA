@@ -57,6 +57,6 @@ pip install -r requirements.txt
 - `segmentation-models-pytorch`
 - `tqdm`
 
-### Correciones
+## Correciones
 
 En este caso, la retroalimentación que nos dieron los profesores no nos llevó a hacer ninguna corrección.
